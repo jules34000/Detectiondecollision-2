@@ -12,9 +12,9 @@ import javax.swing.*;
 public class Scene extends JPanel {
     int x;
     int y;
-    Polygon[] polygons;
+    Polygone[] polygons;
 
-    public Scene(int x, int y, Polygon[] polygons) {
+    public Scene(int x, int y, Polygone[] polygons) {
         this.x = x;
         this.y = y;
         this.polygons = polygons;
@@ -29,14 +29,14 @@ public class Scene extends JPanel {
        for (int i = 0 ; i<polygons.length ; i++){
            int xValues[] = polygons[i].xpoints;
            int yValues[] = polygons[i].ypoints;
-           Polygon polygonA = new Polygon (xValues, yValues , xValues.length);
-           g.drawPolygon( polygonA);
+           Polygone polygonA = new Polygone (xValues, yValues , xValues.length);
+           g.drawPolygon(polygonA);
        }
                           
  
     }
-    public void dessiner(int x,int y,Polygon[] polygons){
-         JFrame frame=new JFrame("Polygone et Polyligne")	;
+    public void dessiner(int x,int y,Polygone[] polygons){
+                 JFrame frame=new JFrame("Polygones")	;
     		 JPanel policePanel=new Scene(x, y, polygons );
     		 frame.add(policePanel);
     		 frame.setSize(800,800);
